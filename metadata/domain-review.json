@@ -1,0 +1,73 @@
+{
+  "repo": "ion-parse-sql-flow",
+  "language": "Ruby",
+  "category": "Parsers",
+  "goal": "Implement a Ruby parsers project for sql storage recovery, using log and snapshot fixtures and replay consistency checks.",
+  "review_model": {
+    "terms": [
+      "token drift",
+      "grammar width",
+      "label quality",
+      "error locality"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "token drift",
+      "signal": 48,
+      "slack": 35,
+      "drag": 19,
+      "confidence": 85,
+      "score": 159,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "grammar width",
+      "signal": 74,
+      "slack": 45,
+      "drag": 13,
+      "confidence": 67,
+      "score": 221,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "label quality",
+      "signal": 55,
+      "slack": 21,
+      "drag": 26,
+      "confidence": 88,
+      "score": 141,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "error locality",
+      "signal": 86,
+      "slack": 50,
+      "drag": 18,
+      "confidence": 80,
+      "score": 248,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "token drift",
+      "signal": 77,
+      "slack": 26,
+      "drag": 28,
+      "confidence": 66,
+      "score": 162,
+      "lane": "ship"
+    }
+  ]
+}
